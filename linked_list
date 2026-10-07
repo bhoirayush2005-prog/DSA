@@ -1,0 +1,24 @@
+linked list is a seqence of item,which  are connected together via links
+
+linked list is te second m ost used data structure after array
+
+
+
+1.node --> indiviual element in linked list
+2.data -->each node of linked list can store element of data
+3.next -->a link or pointer to next link called next 
+4.head -->a linked list contains the link to the first node call head
+
+basic ops
+create
+insert node 
+delete node
+ _______________                             
+|               |          
+|    head       | ------->
+|_______________| 
+
+
+
+1.singly linked list and circular
+2.doubly linear and doubly circular linked list

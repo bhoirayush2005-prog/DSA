@@ -36,3 +36,22 @@ list.append(n3)
 list.append(Node(40))
 
 list.print()
+
+
+class linkedlist:
+    def append(self,new node):
+        temp = temp.next
+    temp.next = new_node
+class linkedlist:
+    def insert(self,new_node,position):
+        if position == 1:
+            new_node.next = self.head
+            self.head = new_node
+        else:
+           p = 1
+           while(p!=position-1):
+               temp = temp.next
+               p += 1
+            new_node.next = temp.next
+            temp.next = new_node
+            
