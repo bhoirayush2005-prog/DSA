@@ -1,0 +1,114 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data, pos=None):
+        new_node = Node(data)
+
+        if pos is None or pos == 1:
+            new_node.next = self.head
+            self.head = new_node
+            return
+
+        temp = self.head
+        for _ in range(pos - 2):
+            if temp is None:
+                return
+            temp = temp.next
+
+        if temp is None:
+            return
+
+        new_node.next = temp.next
+        temp.next = new_node
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+        print()
+
+    def middle(self):
+        slow = fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        if slow:
+            print(slow.data)
+
+    def delete(self, pos):
+        if self.head is None:
+            return
+
+        if pos == 1:
+            self.head = self.head.next      
+            return
+
+        temp = self.head
+        for _ in range(pos - 2):
+            if temp is None:
+                return
+            temp = temp.next
+
+        if temp is None or temp.next is None:
+            return
+
+        temp.next = temp.next.next
+
+    def reverse(self):
+        prev = None
+        curr = self.head
+
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+
+        self.head = prev
+
+    def consecutive_sums(self):
+        temp = self.head
+        while temp and temp.next:
+            print(temp.data + temp.next.data, end=" ")
+            temp = temp.next
+        print()
+
+
+
+list = LinkedList()
+
+
+list.insert(10, 1)
+list.insert(20, 2)
+list.insert(30, 3)
+list.insert(40, 4)
+list.insert(50, 5)
+
+print("Original linked list:")
+list.display()
+
+print("After inserting 25 at position 3:")
+list.insert(25, 3)
+list.display()
+
+print("Middle node:")
+list.middle()
+
+print("After deleting node at position 2:")
+list.delete(2)
+list.display()
+
+print("Reversed linked list:")
+list.reverse()
+list.display()
+
+print("Sum of consecutive nodes:")
+list.consecutive_sums()         
