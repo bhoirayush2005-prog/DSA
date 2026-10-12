@@ -39,9 +39,9 @@ list.print()
 
 
 class linkedlist:
-    def append(self,new node):
+    def append(self,new_node):
         temp = temp.next
-    temp.next = new_node
+        temp.next = new_node
 class linkedlist:
     def insert(self,new_node,position):
         if position == 1:
